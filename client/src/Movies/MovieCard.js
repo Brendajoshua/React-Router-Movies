@@ -1,11 +1,10 @@
 import React from 'react';
 
-const MovieCard = props => {
-  const {title, director, metascore, stars, id } = props.movie;
+const MovieCard = ({movie}) => {
+  const {title, director, metascore, stars, id } = movie;
   return (
+    
     <div className="movie-card">
-      <img src={require(`../assets/${id}.jpg`)} alt={`${title}`}/>
-    <div>
     <h2>{title}</h2>
     <div className="movie-director">
       Director: <em>{director}</em>
@@ -21,7 +20,8 @@ const MovieCard = props => {
       </div>
     
       ))}
-    </div>
+    
+    <div className="save-button">Save</div>
     </div>
   )
 };

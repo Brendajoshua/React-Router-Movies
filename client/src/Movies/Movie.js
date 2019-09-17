@@ -2,8 +2,12 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import MovieCard from './MovieCard';
 
+
+
 const Movie = (props) => {
-  const [movie, setMovie] = useState({});
+  const [movie, setMovie] = useState([]);
+  console.log(props);
+
   const id = props.match.params.id;
  
   useEffect(() => {
@@ -32,13 +36,19 @@ const Movie = (props) => {
     return <div>Loading movie information...</div>;
   }
 
-  return(
-    <div className="save-wrapper">
-      <MovieCard movie={movie}/>
-    </div>
-  )
+  // return(
+  //     <MovieCard movie={movie} {...props}/>
+  // ); 
+  // const movie = () => {
+    return (
+      <div className="save-wrapper">
+        <MovieCard movie={movie}/>
+        <div className="save-button" onClick={() => saveMovie()}>
+        Save
+      </div>
+      </div>
+    );
+  }
 
-  
-}
 
 export default Movie;
