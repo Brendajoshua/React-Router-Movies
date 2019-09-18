@@ -8,8 +8,8 @@ const Movie = (props) => {
   const [movie, setMovie] = useState([]);
   console.log(props);
 
+  
   const id = props.match.params.id;
- 
   useEffect(() => {
     
     // change ^^^ that line and grab the id from the URL
@@ -32,7 +32,7 @@ const Movie = (props) => {
     addToSavedList(movie)
   }
 
-  if (!movie) {
+  if (movie.length==0) {
     return <div>Loading movie information...</div>;
   }
 
