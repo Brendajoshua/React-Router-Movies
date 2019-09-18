@@ -32,7 +32,7 @@ const Movie = (props) => {
     addToSavedList(movie)
   }
 
-  if (movie.length==0) {
+  if (movie.length === 0) {
     return <div>Loading movie information...</div>;
   }
 
